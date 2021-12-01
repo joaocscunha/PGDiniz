@@ -106,7 +106,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 							<div class="row">
 								<div class="col-md-12">
-
 									<?php if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
 									<?php
 									$id = intval($_GET['id']);

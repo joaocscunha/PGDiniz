@@ -97,7 +97,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 									</tr>
 								</thead>
 								<tbody>
-
 									<?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.SeatingCapacity,tblvehicles.id from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
 									$query = $dbh->prepare($sql);
 									$query->execute();

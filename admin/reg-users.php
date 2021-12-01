@@ -98,7 +98,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 								</thead>
 								
 								<tbody>
-
 									<?php $sql = "SELECT * from  tblusers ";
 									$query = $dbh->prepare($sql);
 									$query->execute();

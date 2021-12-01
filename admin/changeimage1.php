@@ -93,7 +93,6 @@ if (strlen($_SESSION['alogin']) == 0) {
 										<?php if ($error) { ?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } else if ($msg) { ?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php } ?>
 
 
-
 										<div class="form-group">
 											<label class="col-sm-4 control-label"> Imagem 1 Atual</label>
 											<?php
