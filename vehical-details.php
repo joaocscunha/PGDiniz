@@ -111,11 +111,11 @@ if (isset($_POST['submit'])) {
         <div class="container">
           <div class="listing_detail_head row">
             <div class="col-md-9">
-              <h2><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></h2>
+              <h2><?php echo htmlentities($result->BrandName); ?> <?php echo htmlentities($result->VehiclesTitle); ?></h2>
             </div>
             <div class="col-md-3">
               <div class="price_info">
-                <p>$<?php echo htmlentities($result->PricePerDay); ?> </p>Per Day
+                <p><?php echo htmlentities($result->PricePerDay); ?>€</p>Por Dia
 
               </div>
             </div>
@@ -127,16 +127,16 @@ if (isset($_POST['submit'])) {
 
                   <li> <i class="fa fa-calendar" aria-hidden="true"></i>
                     <h5><?php echo htmlentities($result->ModelYear); ?></h5>
-                    <p>Reg.Year</p>
+                    <p>Ano</p>
                   </li>
-                  <li> <i class="fa fa-cogs" aria-hidden="true"></i>
+                  <li> <i class="fa fa-car" aria-hidden="true"></i>
                     <h5><?php echo htmlentities($result->FuelType); ?></h5>
-                    <p>Fuel Type</p>
+                    <p>Combustível</p>
                   </li>
 
                   <li> <i class="fa fa-user-plus" aria-hidden="true"></i>
                     <h5><?php echo htmlentities($result->SeatingCapacity); ?></h5>
-                    <p>Seats</p>
+                    <p>Capacidade</p>
                   </li>
                 </ul>
               </div>
@@ -144,7 +144,7 @@ if (isset($_POST['submit'])) {
                 <div class="listing_detail_wrap">
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs gray-bg" role="tablist">
-                    <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Vehicle Overview </a></li>
+                    <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Informações Adicionais</a></li>
                   </ul>
 
                   <!-- Tab panes -->
@@ -166,21 +166,21 @@ if (isset($_POST['submit'])) {
             <aside class="col-md-3">
               <div class="sidebar_widget">
                 <div class="widget_heading">
-                  <h5><i class="fa fa-envelope" aria-hidden="true"></i>Book Now</h5>
+                  <h5><i class="fa fa-envelope" aria-hidden="true"></i>Reservar</h5>
                 </div>
                 <form method="post">
                   <div class="form-group">
-                    <input type="text" class="form-control" name="fromdate" placeholder="From Date(dd/mm/yyyy)" required>
+                    <input type="text" class="form-control" name="fromdate" placeholder="Data Início (dd/mm/yyyy)" required>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control" name="todate" placeholder="To Date(dd/mm/yyyy)" required>
+                    <input type="text" class="form-control" name="todate" placeholder="Data Final (dd/mm/yyyy)" required>
                   </div>
                   <?php if ($_SESSION['login']) { ?>
                     <div class="form-group">
-                      <input type="submit" class="btn" name="submit" value="Book Now">
+                      <input type="submit" class="btn" name="submit" value="Reservar">
                     </div>
                   <?php } else { ?>
-                    <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login For Book</a>
+                    <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login para Reservar</a>
 
                   <?php } ?>
                 </form>
@@ -194,7 +194,7 @@ if (isset($_POST['submit'])) {
 
           <!--Similar-Cars-->
           <div class="similar_cars">
-            <h3>Similar Cars</h3>
+            <h3>Carros Similares</h3>
             <div class="row">
               <?php
               $bid = $_SESSION['brndid'];
@@ -211,13 +211,13 @@ if (isset($_POST['submit'])) {
                       <div class="product-listing-img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1); ?>" class="img-responsive" alt="image" /> </a>
                       </div>
                       <div class="product-listing-content">
-                        <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
-                        <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?></p>
+                        <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?> <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
+                        <p class="list-price"><?php echo htmlentities($result->PricePerDay); ?> €</p>
 
                         <ul class="features_list">
 
-                          <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> seats</li>
-                          <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?> model</li>
+                          <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?> Capacidade</li>
+                          <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?></li>
                           <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
                         </ul>
                       </div>

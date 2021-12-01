@@ -168,7 +168,7 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 															<?php if ($result->FuelType = "Diesel") { ?>
 																<option default value="<?php echo htmlentities($result->FuelType); ?>"> <?php echo htmlentities($result->FuelType); ?> </option>
-																<option value="Petrol">Gasolina</option>
+																<option value="Gasolina">Gasolina</option>
 															<?php } else { ?>
 																<option default value="<?php echo htmlentities($result->FuelType); ?>"> <?php echo htmlentities($result->FuelType); ?> </option>
 																<option value="Diesel">Diesel</option>
